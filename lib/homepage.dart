@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Authentication Screen'),
       ),
+      body: const Center(
+        child: Text('this is body'),
+      ),
     );
   }
 }
