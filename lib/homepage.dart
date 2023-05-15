@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text(''),
+        title: const Text('Authentication Screen'),
       ),
     );
   }
