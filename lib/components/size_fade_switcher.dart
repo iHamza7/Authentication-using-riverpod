@@ -8,10 +8,28 @@ class SizeFadeSwitcher extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
       transitionBuilder: (child, animation) {
+        final sizeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: animation,
+            curve: const Interval(
+              0.0,
+              0.5,
+            ),
+          ),
+        );
+        final fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: animation,
+            curve: const Interval(
+              0.5,
+              1.0,
+            ),
+          ),
+        );
         return FadeTransition(
-          opacity: animation,
+          opacity: fadeAnimation,
           child: SizeTransition(
-            sizeFactor: animation,
+            sizeFactor: sizeAnimation,
             child: child,
           ),
         );
