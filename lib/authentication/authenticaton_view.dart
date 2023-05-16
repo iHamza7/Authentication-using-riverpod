@@ -26,7 +26,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
               },
               child: const Padding(
                 padding: EdgeInsets.all(16.0),
-                child: Text('toggle'),
+                child: Text('button'),
               ),
             )
           ],
