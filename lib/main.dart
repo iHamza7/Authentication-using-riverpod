@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/text_input_field.dart';
+import 'authentication/authenticaton_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TextInputField(),
+      home: const AuthenticationView(),
     );
   }
 }
