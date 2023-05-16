@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'size_fade_switcher.dart';
+
 class TextInputField extends StatelessWidget {
   final bool showSignIn;
   const TextInputField(this.showSignIn, {super.key});
@@ -28,15 +30,18 @@ class TextInputField extends StatelessWidget {
             ),
           ),
         ),
-        showSignIn
-            ? Padding(
-                padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
-                child: Text(
-                  'error',
-                  style: TextStyle(color: Theme.of(context).colorScheme.error),
-                ),
-              )
-            : const SizedBox.shrink()
+        SizeFadeSwitcher(
+          child: showSignIn
+              ? Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
+                  child: Text(
+                    'error',
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.error),
+                  ),
+                )
+              : const SizedBox.shrink(),
+        ),
       ],
     );
   }
