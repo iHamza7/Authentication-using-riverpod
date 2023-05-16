@@ -9,13 +9,28 @@ class AuthenticationView extends StatefulWidget {
 }
 
 class _AuthenticationViewState extends State<AuthenticationView> {
+  bool _showSignIn = true;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          TextInputField(),
-        ],
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
+        child: Column(
+          children: [
+            TextInputField(_showSignIn),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _showSignIn = !_showSignIn;
+                });
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('toggle'),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
