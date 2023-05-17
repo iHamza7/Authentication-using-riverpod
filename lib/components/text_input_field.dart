@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 import 'size_fade_switcher.dart';
 
 class TextInputField extends StatelessWidget {
-  final bool showSignIn;
-  const TextInputField(this.showSignIn, {super.key});
+  final String hintText;
+  final String? errorText;
+
+  final bool obscureText;
+  final void Function(String value) onChanged;
+  const TextInputField({
+    super.key,
+    required this.hintText,
+    this.errorText,
+    this.obscureText = false,
+    required this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +28,13 @@ class TextInputField extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: const Color(0XFFD0D0D0), width: 1.5)),
-          child: const TextField(
+          child: TextField(
+            onChanged: onChanged,
+            obscureText: obscureText,
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: 'Email',
-              hintStyle: TextStyle(
+              hintText: hintText,
+              hintStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFFC2C2C2),
@@ -31,11 +43,11 @@ class TextInputField extends StatelessWidget {
           ),
         ),
         SizeFadeSwitcher(
-          child: showSignIn
+          child: errorText != null
               ? Padding(
                   padding: const EdgeInsets.fromLTRB(16, 4, 16, 0),
                   child: Text(
-                    'error',
+                    errorText!,
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.error),
                   ),
