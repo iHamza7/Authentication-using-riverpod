@@ -14,49 +14,60 @@ class _AuthenticationViewState extends State<AuthenticationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
-        child: Column(
-          children: [
-            TextInputField(
-              hintText: 'Email',
-              onChanged: (_) {},
-            ),
-            TextInputField(
-              hintText: 'Password',
-              onChanged: (_) {},
-            ),
-            AnimatedButton(
-              onTap: () {},
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 18),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: const Color(0XFFF5D973),
-                  borderRadius: BorderRadius.circular(12),
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
+            child: Column(
+              children: [
+                TextInputField(
+                  hintText: 'Email',
+                  onChanged: (_) {},
                 ),
-                child: const Text(
-                  'SignIn',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                TextInputField(
+                  hintText: 'Password',
+                  onChanged: (_) {},
                 ),
-              ),
+                AnimatedButton(
+                  onTap: () {},
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 18),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: const Color(0XFFF5D973),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'SignIn',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            GestureDetector(
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 50,
+            child: GestureDetector(
               onTap: () {
                 setState(() {
                   _showSignIn = !_showSignIn;
                 });
               },
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('toggle '),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                alignment: Alignment.center,
+                child: const Text('toggle '),
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
