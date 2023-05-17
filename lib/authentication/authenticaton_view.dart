@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/animated_button.dart';
+import '../components/auth_switch_button.dart';
 import '../components/text_input_field.dart';
 
 class AuthenticationView extends StatefulWidget {
@@ -50,22 +51,13 @@ class _AuthenticationViewState extends State<AuthenticationView> {
               ],
             ),
           ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 50,
-            child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  _showSignIn = !_showSignIn;
-                });
-              },
-              child: Container(
-                padding: const EdgeInsets.all(16.0),
-                alignment: Alignment.center,
-                child: const Text('toggle '),
-              ),
-            ),
+          AuthSwitchButton(
+            onTap: () {
+              setState(() {
+                _showSignIn = !_showSignIn;
+              });
+            },
+            showSignIn: _showSignIn,
           ),
         ],
       ),
