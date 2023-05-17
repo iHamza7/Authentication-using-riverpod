@@ -1,41 +1,29 @@
 import 'package:flutter/material.dart';
 
 import '../../components/animated_button.dart';
-import '../../components/text_input_field.dart';
+
+import 'button.dart';
+import 'email.dart';
+import 'name.dart';
+import 'password.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        TextInputField(
-          hintText: 'Email',
-          onChanged: (_) {},
+        Name(),
+        SizedBox(
+          height: 16,
         ),
-        TextInputField(
-          hintText: 'Password',
-          onChanged: (_) {},
+        Email(),
+        SizedBox(
+          height: 16,
         ),
-        AnimatedButton(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 18),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: const Color(0XFFF5D973),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Text(
-              'SignIn',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-          ),
-        ),
+        Password(),
+        SignUpButton(),
       ],
     );
   }
