@@ -32,8 +32,16 @@ class _AuthenticationViewState extends State<AuthenticationView> {
                 padding: const EdgeInsets.symmetric(vertical: 18),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: const Color(0XFFF5D973),
-                    borderRadius: BorderRadius.circular(12)),
+                  color: const Color(0XFFF5D973),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Text(
+                  'SignIn',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
               ),
             ),
             GestureDetector(
