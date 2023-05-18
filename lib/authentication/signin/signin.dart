@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../google_signin/google_signin_button.dart';
 import 'button.dart';
 import 'divider.dart';
 import 'email.dart';
@@ -24,6 +25,7 @@ class SignIn extends StatelessWidget {
         ),
         SignInButton(),
         OrDivider(),
+        GoogleSignInButton(),
       ],
     );
   }
