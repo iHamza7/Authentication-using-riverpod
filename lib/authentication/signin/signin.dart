@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'button.dart';
 import 'email.dart';
+import 'forgot_password_button.dart';
 import 'name.dart';
 
 class SignIn extends StatelessWidget {
@@ -16,6 +17,7 @@ class SignIn extends StatelessWidget {
           height: 16,
         ),
         Email(),
+        ForgotButton(),
         SizedBox(
           height: 16,
         ),
