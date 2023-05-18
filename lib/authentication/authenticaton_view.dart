@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/auth_switch_button.dart';
 
+import '../components/slide_fade_switcher.dart';
 import 'signin/signin.dart';
 import 'signup/signup.dart';
 
@@ -21,9 +22,10 @@ class _AuthenticationViewState extends State<AuthenticationView> {
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
-            child: _showSignIn ? const SignIn() : const SignUp(),
-          ),
+              padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
+              child: SlideFadeSwitcher(
+                child: _showSignIn ? const SignIn() : const SignUp(),
+              )),
           AuthSwitchButton(
             onTap: () {
               setState(() {
