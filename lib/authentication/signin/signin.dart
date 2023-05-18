@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'button.dart';
+import 'divider.dart';
 import 'email.dart';
 import 'forgot_password_button.dart';
 import 'name.dart';
@@ -22,6 +23,7 @@ class SignIn extends StatelessWidget {
           height: 16,
         ),
         SignInButton(),
+        OrDivider(),
       ],
     );
   }
