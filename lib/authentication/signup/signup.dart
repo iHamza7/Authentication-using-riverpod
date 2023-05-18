@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../components/animated_button.dart';
-
 import 'button.dart';
 import 'email.dart';
 import 'name.dart';
