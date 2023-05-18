@@ -29,10 +29,12 @@ class AuthSwitchButton extends StatelessWidget {
             child: showSignIn
                 ? const Text(
                     "Don't have account? SignUp ",
+                    key: ValueKey('SignUp'),
                     style: _KTextStyle,
                   )
                 : const Text(
                     "Already have account? SignIn ",
+                    key: ValueKey('SignIn'),
                     style: _KTextStyle,
                   ),
           ),
