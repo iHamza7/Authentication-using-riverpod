@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'slide_fade_switcher.dart';
+
+const _KTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, color: Color(0XFF9A9A9A));
+
 class AuthSwitchButton extends StatelessWidget {
   final VoidCallback onTap;
   final bool showSignIn;
@@ -20,7 +25,17 @@ class AuthSwitchButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16.0),
           alignment: Alignment.center,
-          child: const Text('toggle '),
+          child: SlideFadeSwitcher(
+            child: showSignIn
+                ? const Text(
+                    "Don't have account? SignUp ",
+                    style: _KTextStyle,
+                  )
+                : const Text(
+                    "Already have account? SignIn ",
+                    style: _KTextStyle,
+                  ),
+          ),
         ),
       ),
     );
