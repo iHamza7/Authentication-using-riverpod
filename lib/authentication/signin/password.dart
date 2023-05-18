@@ -9,6 +9,7 @@ class Password extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextInputField(
       hintText: 'Password',
+      obscureText: true,
       onChanged: (_) {},
     );
   }

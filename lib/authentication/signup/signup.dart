@@ -21,6 +21,9 @@ class SignUp extends StatelessWidget {
           height: 16,
         ),
         Password(),
+        SizedBox(
+          height: 16,
+        ),
         SignUpButton(),
       ],
     );

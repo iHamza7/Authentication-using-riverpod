@@ -11,7 +11,7 @@ class SignInButton extends StatelessWidget {
     return AnimatedButton(
       onTap: () {},
       child: const RoundedButton(
-        title: 'SignUp',
+        title: 'SignIn',
       ),
     );
   }
