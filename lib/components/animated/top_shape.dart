@@ -30,7 +30,7 @@ class TopShape extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     debugPrint("value of x: ${0 / 360}");
-    debugPrint("value of x: ${115 / 160}");
+    debugPrint("value of y: ${115 / 160}");
     final path = Path();
 
     // first point
