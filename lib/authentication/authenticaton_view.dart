@@ -5,6 +5,7 @@ import '../components/auth_switch_button.dart';
 import '../components/slide_fade_switcher.dart';
 import 'signin/signin.dart';
 import 'signup/signup.dart';
+import '../components/animated/animated_shape.dart';
 
 class AuthenticationView extends StatefulWidget {
   const AuthenticationView({super.key});
@@ -22,10 +23,13 @@ class _AuthenticationViewState extends State<AuthenticationView> {
       body: Stack(
         children: [
           Padding(
-              padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
-              child: SlideFadeSwitcher(
-                child: _showSignIn ? const SignIn() : const SignUp(),
-              )),
+            padding: const EdgeInsets.fromLTRB(16, 250, 16, 0),
+            child: SlideFadeSwitcher(
+              child: _showSignIn ? const SignIn() : const SignUp(),
+            ),
+          ),
+          const AnimatedShape(
+              color: Color(0XFF595DC6), show: true, text: "Create Account"),
           AuthSwitchButton(
             onTap: () {
               setState(() {

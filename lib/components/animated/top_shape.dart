@@ -29,7 +29,18 @@ class TopShape extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
+    print("value of x: ${0 / 360}");
+    print("value of x: ${162 / 209}");
     final path = Path();
+
+    // first point
+    path.lineTo(0, size.height * 0.7751196172248804);
+
+    // seven point
+    path.lineTo(size.width, 0);
+
+    // last point
+    path.close();
     return path;
   }
 
