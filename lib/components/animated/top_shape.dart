@@ -36,6 +36,16 @@ class TopShape extends CustomClipper<Path> {
     // first point
     path.lineTo(0, size.height * 0.71875);
 
+    //second point
+    path.cubicTo(
+      size.width * 0.07222222222222222,
+      size.height * 0.4375,
+      size.width * 0.17222222222222222,
+      size.height * 0.3375,
+      size.width * 0.22777777777777777,
+      size.height * 0.60625,
+    );
+
     // seven point
     path.lineTo(size.width, 0);
 
