@@ -30,21 +30,21 @@ class TopShape extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     debugPrint("value of width: ${0 / 360}");
-    debugPrint("value of height y: ${115 / 160}");
+    debugPrint("value of height y: ${257 / 473}");
     final path = Path();
 
     // first point
-    path.lineTo(0, size.height * 0.71875);
+    path.lineTo(0, size.height * 0.5433403805496829);
 
     //second point
-    path.cubicTo(
-      size.width * 0.07222222222222222,
-      size.height * 0.4375,
-      size.width * 0.17222222222222222,
-      size.height * 0.3375,
-      size.width * 0.22777777777777777,
-      size.height * 0.60625,
-    );
+    // path.cubicTo(
+    //   size.width * 0.07222222222222222,
+    //   size.height * 0.4375,
+    //   size.width * 0.17222222222222222,
+    //   size.height * 0.3375,
+    //   size.width * 0.22777777777777777,
+    //   size.height * 0.60625,
+    // );
 
     // seven point
     path.lineTo(size.width, 0);
