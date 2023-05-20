@@ -29,21 +29,38 @@ class TopShape extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    debugPrint("value of width: ${0 / 360}");
-    debugPrint("value of height y: ${144 / 195}");
+    debugPrint('value of x3 ${408 / 1080}');
+    debugPrint('value of y3 ${256 / 513}');
     final path = Path();
 
     // first point
-    path.lineTo(0, size.height * 0.7384615384615385);
+    path.lineTo(0, size.height * 0.5906432748538012);
 
     //second point
+    path.cubicTo(
+      size.width * 0.040740740740740744,
+      size.height * 0.31968810916179335,
+      size.width * 0.09537037037037037,
+      size.height * 0.2573099415204678,
+      size.width * 0.1574074074074074,
+      size.height * 0.39766081871345027,
+    );
+    // third point
+    path.cubicTo(
+      size.width * 0.2074074074074074,
+      size.height * 0.6842105263157895,
+      size.width * 0.3,
+      size.height * 0.6198830409356725,
+      size.width * 0.37777777777777777,
+      size.height * 0.49902534113060426,
+    );
     // path.cubicTo(
-    //   size.width * 0.07222222222222222,
-    //   size.height * 0.4375,
-    //   size.width * 0.17222222222222222,
-    //   size.height * 0.3375,
-    //   size.width * 0.22777777777777777,
-    //   size.height * 0.60625,
+    //   size.width * 0.2074074074074074,
+    //   size.height * 0.6842105263157895,
+    //   size.width * 0.3,
+    //   size.height * 0.6198830409356725,
+    //   size.width * 0.37777777777777777,
+    //   size.height * 0.49902534113060426,
     // );
 
     // seven point
