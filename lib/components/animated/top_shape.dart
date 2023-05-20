@@ -29,8 +29,8 @@ class TopShape extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    debugPrint('value of x3 ${930 / 1080}');
-    debugPrint('value of y3 ${502 / 513}');
+    debugPrint('value of x1 ${214 / 1080}');
+    debugPrint('value of y1 ${686 / 513}');
     final path = Path();
 
     // first point
@@ -55,32 +55,35 @@ class TopShape extends CustomClipper<Path> {
       size.height * 0.49902534113060426,
     );
     //forth point
-    // path.cubicTo(
-    //   size.width * 0.37777777777777777,
-    //   size.height * 0.49902534113060426,
-    //   size.width * 0.4361111111111111,
-    //   size.height * 0.1189083820662768,
-    //   size.width * 0.5425925925925926,
-    //   size.height * 0.25925925925925924,
-    // );
-    //forth point
     path.cubicTo(
+      size.width * 0.37777777777777777,
+      size.height * 0.49902534113060426,
       size.width * 0.4361111111111111,
       size.height * 0.1189083820662768,
       size.width * 0.5425925925925926,
       size.height * 0.25925925925925924,
-      size.width * 0.6351851851851852,
-      size.height * 0.4171539961013645,
     );
+    //forth point
+    // path.cubicTo(
+    //   size.width * 0.4361111111111111,
+    //   size.height * 0.1189083820662768,
+    //   size.width * 0.5425925925925926,
+    //   size.height * 0.25925925925925924,
+    //   size.width * 0.6351851851851852,
+    //   size.height * 0.4171539961013645,
+    // );
     //fifth point
     path.cubicTo(
       size.width * 0.7694444444444445,
       size.height * 0.9785575048732943,
       size.width * 0.8175925925925925,
-      size.height * 0.9785575048732943,
+      size.height,
+      // size.height * 0.9785575048732943,
       size.width * 0.8611111111111112,
-      size.height * 0.9785575048732943,
+      size.height,
+      // size.height * 0.9785575048732943,
     );
+
     // seven point
     path.lineTo(size.width, 0);
 
