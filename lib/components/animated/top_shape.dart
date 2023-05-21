@@ -35,35 +35,35 @@ class TopShape extends CustomClipper<Path> {
 
     // first point
     // path.lineTo(0, size.height * 0.5906432748538012);
-    path.lineTo(0, size.height * 0.8177083333333334);
+    // path.lineTo(0, size.height * 0.8177083333333334);
 
-    //second point
-    path.cubicTo(
-      size.width * 0.040740740740740744,
-      size.height * 0.31968810916179335,
-      size.width * 0.09537037037037037,
-      size.height * 0.2573099415204678,
-      size.width * 0.1574074074074074,
-      size.height * 0.39766081871345027,
-    );
-    // third point
-    path.cubicTo(
-      size.width * 0.2074074074074074,
-      size.height * 0.6842105263157895,
-      size.width * 0.3,
-      size.height * 0.6198830409356725,
-      size.width * 0.37777777777777777,
-      size.height * 0.49902534113060426,
-    );
-    //forth point
-    path.cubicTo(
-      size.width * 0.37777777777777777,
-      size.height * 0.49902534113060426,
-      size.width * 0.4361111111111111,
-      size.height * 0.1189083820662768,
-      size.width * 0.5425925925925926,
-      size.height * 0.25925925925925924,
-    );
+    // //second point
+    // path.cubicTo(
+    //   size.width * 0.040740740740740744,
+    //   size.height * 0.31968810916179335,
+    //   size.width * 0.09537037037037037,
+    //   size.height * 0.2573099415204678,
+    //   size.width * 0.1574074074074074,
+    //   size.height * 0.39766081871345027,
+    // );
+    // // third point
+    // path.cubicTo(
+    //   size.width * 0.2074074074074074,
+    //   size.height * 0.6842105263157895,
+    //   size.width * 0.3,
+    //   size.height * 0.6198830409356725,
+    //   size.width * 0.37777777777777777,
+    //   size.height * 0.49902534113060426,
+    // );
+    // //forth point
+    // path.cubicTo(
+    //   size.width * 0.37777777777777777,
+    //   size.height * 0.49902534113060426,
+    //   size.width * 0.4361111111111111,
+    //   size.height * 0.1189083820662768,
+    //   size.width * 0.5425925925925926,
+    //   size.height * 0.25925925925925924,
+    // );
     //forth point
     // path.cubicTo(
     //   size.width * 0.4361111111111111,
@@ -74,31 +74,31 @@ class TopShape extends CustomClipper<Path> {
     //   size.height * 0.4171539961013645,
     // );
     //fifth point
-    path.cubicTo(
-      size.width * 0.7694444444444445,
-      size.height * 0.9785575048732943,
-      size.width * 0.8175925925925925,
-      size.height,
-      // size.height * 0.9785575048732943,
-      size.width * 0.8611111111111112,
-      size.height,
-      // size.height * 0.9785575048732943,
-    );
-    //sixth point
-    path.cubicTo(
-      size.width * 0.8611111111111112,
-      size.height,
-      size.width * 0.9342592592592592,
-      size.height * 0.41325536062378165,
-      size.width,
-      size.height * 0.5906432748538012,
-    );
+    // path.cubicTo(
+    //   size.width * 0.7694444444444445,
+    //   size.height * 0.9785575048732943,
+    //   size.width * 0.8175925925925925,
+    //   size.height,
+    //   // size.height * 0.9785575048732943,
+    //   size.width * 0.8611111111111112,
+    //   size.height,
+    //   // size.height * 0.9785575048732943,
+    // );
+    // //sixth point
+    // path.cubicTo(
+    //   size.width * 0.8611111111111112,
+    //   size.height,
+    //   size.width * 0.9342592592592592,
+    //   size.height * 0.41325536062378165,
+    //   size.width,
+    //   size.height * 0.5906432748538012,
+    // );
 
-    // seven point
-    path.lineTo(size.width, 0);
+    // // seven point
+    // path.lineTo(size.width, 0);
 
-    // last point
-    path.close();
+    // // last point
+    // path.close();
     return path;
   }
 
