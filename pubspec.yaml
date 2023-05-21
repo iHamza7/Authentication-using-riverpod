@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^2.3.6
   loading_animation_widget: ^1.2.0+4
+  equatable: ^2.0.5
+  form_validators:
+    path: packages/form_validators
 
 dev_dependencies:
   flutter_test:
