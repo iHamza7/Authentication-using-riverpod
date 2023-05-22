@@ -12,7 +12,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Name(),
+        NameField(),
         SizedBox(
           height: 16,
         ),

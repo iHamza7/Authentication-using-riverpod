@@ -10,20 +10,31 @@ final signUpProvider = StateNotifierProvider<SignUpController, SignUpState>(
 class SignUpController extends StateController<SignUpState> {
   SignUpController() : super(const SignUpState());
 
-  onNameChange(String value) {
+  void onNameChange(String value) {
     final name = Name.dirty(value);
     final status = Formz.validate([name, state.email, state.password]);
     state = state.copyWith(
       name: name,
       status: FormzSubmissionStatus.initial,
     );
-    return status;
+  }
 
-    // state = state.copyWith(
-    //   name: name,
+  void onEmailChange(String value) {
+    final email = Email.dirty(value);
+    final status = Formz.validate([email, state.name, state.password]);
+    state = state.copyWith(
+      email: email,
+      status: FormzSubmissionStatus.initial,
+    );
+  }
 
-    //   status: Formz .validate([name, state.email, state.password, ]),
-    // );
+  void onPasswordChange(String value) {
+    final password = Password.dirty(value);
+    final status = Formz.validate([password, state.email, state.name]);
+    state = state.copyWith(
+      password: password,
+      status: FormzSubmissionStatus.initial,
+    );
   }
 
   void signUpWithEmailAndPassword() async {
