@@ -5,6 +5,7 @@ class SignUpState extends Equatable {
   final Name name;
   final Email email;
   final Password password;
+  final FormzSubmissionStatus status;
 
   final String? errormessage;
 
@@ -12,8 +13,7 @@ class SignUpState extends Equatable {
     this.name = const Name.pure(),
     this.email = const Email.pure(),
     this.password = const Password.pure(),
-
-    // this.status = FormzStatus.
+    this.status = FormzSubmissionStatus.initial,
     this.errormessage,
   });
 
@@ -22,7 +22,7 @@ class SignUpState extends Equatable {
         name,
         email,
         password,
-        // status,
+        status,
       ];
 
   SignUpState copyWith({
@@ -36,7 +36,7 @@ class SignUpState extends Equatable {
       name: name ?? this.name,
       email: email ?? this.email,
       password: password ?? this.password,
-      // status: status ?? this.status,
+      status: status ?? this.status,
       errormessage: errormessage ?? this.errormessage,
     );
   }
