@@ -22,7 +22,7 @@ class Name extends FormzInput<String, NameValidationError> {
     if (error == NameValidationError.empty) {
       return 'Empty Name';
     } else if (error == NameValidationError.invalid) {
-      return 'Too Short t';
+      return 'Too Short name';
     } else {
       return null;
     }
