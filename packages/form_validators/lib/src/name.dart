@@ -20,7 +20,7 @@ class Name extends FormzInput<String, NameValidationError> {
 
   static String? showNameError(NameValidationError? error) {
     if (error == NameValidationError.empty) {
-      return 'Empty Name is';
+      return 'Empty Name';
     } else if (error == NameValidationError.invalid) {
       return 'Too Short ';
     } else {
