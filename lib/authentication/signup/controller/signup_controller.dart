@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_validators/form_validators.dart';
+import 'package:equatable/equatable.dart';
 // import 'package:equatable/equatable.dart';
-
-import 'signup_state.dart';
+part 'signup_state.dart';
 
 final signUpProvider = StateNotifierProvider<SignUpController, SignUpState>(
     (ref) => SignUpController());

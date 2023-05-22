@@ -1,5 +1,7 @@
-import 'package:equatable/equatable.dart';
-import 'package:form_validators/form_validators.dart';
+// import 'package:equatable/equatable.dart';
+// import 'package:form_validators/form_validators.dart';
+
+part of 'signup_controller.dart';
 
 class SignUpState extends Equatable {
   final Name name;
