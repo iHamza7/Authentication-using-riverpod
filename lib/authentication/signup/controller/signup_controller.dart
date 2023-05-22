@@ -4,6 +4,9 @@ import 'package:form_validators/form_validators.dart';
 
 import 'signup_state.dart';
 
+final signUpProvider = StateNotifierProvider<SignUpController, SignUpState>(
+    (ref) => SignUpController());
+
 class SignUpController extends StateController<SignUpState> {
   SignUpController() : super(const SignUpState());
 
