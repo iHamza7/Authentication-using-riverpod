@@ -56,14 +56,14 @@ class TopShape extends CustomClipper<Path> {
       size.height * 0.49902534113060426,
     );
     // //forth point
-    // path.cubicTo(
-    //   size.width * 0.37777777777777777,
-    //   size.height * 0.49902534113060426,
-    //   size.width * 0.4361111111111111,
-    //   size.height * 0.1189083820662768,
-    //   size.width * 0.5425925925925926,
-    //   size.height * 0.25925925925925924,
-    // );
+    path.cubicTo(
+      size.width * 0.37777777777777777,
+      size.height * 0.49902534113060426,
+      size.width * 0.4361111111111111,
+      size.height * 0.1189083820662768,
+      size.width * 0.5425925925925926,
+      size.height * 0.25925925925925924,
+    );
     //forth point
     // path.cubicTo(
     //   size.width * 0.4361111111111111,
@@ -74,25 +74,25 @@ class TopShape extends CustomClipper<Path> {
     //   size.height * 0.4171539961013645,
     // );
     //fifth point
-    // path.cubicTo(
-    //   size.width * 0.7694444444444445,
-    //   size.height * 0.9785575048732943,
-    //   size.width * 0.8175925925925925,
-    //   size.height,
-    //   // size.height * 0.9785575048732943,
-    //   size.width * 0.8611111111111112,
-    //   size.height,
-    //   // size.height * 0.9785575048732943,
-    // );
+    path.cubicTo(
+      size.width * 0.7694444444444445,
+      size.height * 0.9785575048732943,
+      size.width * 0.8175925925925925,
+      size.height,
+      // size.height * 0.9785575048732943,
+      size.width * 0.8611111111111112,
+      size.height,
+      // size.height * 0.9785575048732943,
+    );
     // //sixth point
-    // path.cubicTo(
-    //   size.width * 0.8611111111111112,
-    //   size.height,
-    //   size.width * 0.9342592592592592,
-    //   size.height * 0.41325536062378165,
-    //   size.width,
-    //   size.height * 0.5906432748538012,
-    // );
+    path.cubicTo(
+      size.width * 0.8611111111111112,
+      size.height,
+      size.width * 0.9342592592592592,
+      size.height * 0.41325536062378165,
+      size.width,
+      size.height * 0.5906432748538012,
+    );
 
     // // seven point
     path.lineTo(size.width, 0);
