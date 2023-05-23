@@ -28,8 +28,11 @@ class _AuthenticationViewState extends State<AuthenticationView> {
               child: _showSignIn ? const SignIn() : const SignUp(),
             ),
           ),
-          const AnimatedShape(
-              color: Color(0XFF595DC6), show: true, text: "Create Account"),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: AnimatedShape(
+                color: Color(0XFF595DC6), show: true, text: "Create Account"),
+          ),
           AuthSwitchButton(
             onTap: () {
               setState(() {
