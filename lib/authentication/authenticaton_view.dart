@@ -29,7 +29,7 @@ class _AuthenticationViewState extends State<AuthenticationView> {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(12.0),
             child: AnimatedShape(
                 color: Color(0XFF595DC6), show: true, text: "Create Account"),
           ),
