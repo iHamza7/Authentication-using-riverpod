@@ -95,10 +95,10 @@ class TopShape extends CustomClipper<Path> {
     // );
 
     // // seven point
-    // path.lineTo(size.width, 0);
+    path.lineTo(size.width, 0);
 
     // // last point
-    // path.close();
+    path.close();
     return path;
   }
 
