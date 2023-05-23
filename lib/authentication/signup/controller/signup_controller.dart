@@ -3,8 +3,9 @@ import 'package:form_validators/form_validators.dart';
 import 'package:equatable/equatable.dart';
 part 'signup_state.dart';
 
-final signUpProvider = StateNotifierProvider<SignUpController, SignUpState>(
-    (ref) => SignUpController());
+final signUpProvider =
+    StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
+        (ref) => SignUpController());
 
 class SignUpController extends StateController<SignUpState> {
   SignUpController() : super(const SignUpState());
