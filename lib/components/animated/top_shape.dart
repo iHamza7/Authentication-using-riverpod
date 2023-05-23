@@ -38,23 +38,23 @@ class TopShape extends CustomClipper<Path> {
     path.lineTo(0, size.height * 0.8177083333333334);
 
     // //second point
-    // path.cubicTo(
-    //   size.width * 0.040740740740740744,
-    //   size.height * 0.31968810916179335,
-    //   size.width * 0.09537037037037037,
-    //   size.height * 0.2573099415204678,
-    //   size.width * 0.1574074074074074,
-    //   size.height * 0.39766081871345027,
-    // );
+    path.cubicTo(
+      size.width * 0.040740740740740744,
+      size.height * 0.31968810916179335,
+      size.width * 0.09537037037037037,
+      size.height * 0.2573099415204678,
+      size.width * 0.1574074074074074,
+      size.height * 0.39766081871345027,
+    );
     // // third point
-    // path.cubicTo(
-    //   size.width * 0.2074074074074074,
-    //   size.height * 0.6842105263157895,
-    //   size.width * 0.3,
-    //   size.height * 0.6198830409356725,
-    //   size.width * 0.37777777777777777,
-    //   size.height * 0.49902534113060426,
-    // );
+    path.cubicTo(
+      size.width * 0.2074074074074074,
+      size.height * 0.6842105263157895,
+      size.width * 0.3,
+      size.height * 0.6198830409356725,
+      size.width * 0.37777777777777777,
+      size.height * 0.49902534113060426,
+    );
     // //forth point
     // path.cubicTo(
     //   size.width * 0.37777777777777777,
