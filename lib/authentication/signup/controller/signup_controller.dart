@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:equatable/equatable.dart';
-// import 'package:equatable/equatable.dart';
 part 'signup_state.dart';
 
 final signUpProvider = StateNotifierProvider<SignUpController, SignUpState>(
@@ -12,28 +11,35 @@ class SignUpController extends StateController<SignUpState> {
 
   void onNameChange(String value) {
     final name = Name.dirty(value);
-    final status = Formz.validate([name, state.email, state.password]);
+
+    final statusname = Formz.validate([name, state.email, state.password]);
     state = state.copyWith(
       name: name,
-      status: FormzSubmissionStatus.initial,
+      status: statusname
+          ? FormzSubmissionStatus.success
+          : FormzSubmissionStatus.failure,
     );
   }
 
   void onEmailChange(String value) {
     final email = Email.dirty(value);
-    final status = Formz.validate([email, state.name, state.password]);
+    final statusemail = Formz.validate([email, state.name, state.password]);
     state = state.copyWith(
       email: email,
-      status: FormzSubmissionStatus.initial,
+      status: statusemail
+          ? FormzSubmissionStatus.success
+          : FormzSubmissionStatus.failure,
     );
   }
 
   void onPasswordChange(String value) {
     final password = Password.dirty(value);
-    final status = Formz.validate([password, state.email, state.name]);
+    final statuspassword = Formz.validate([password, state.email, state.name]);
     state = state.copyWith(
       password: password,
-      status: FormzSubmissionStatus.initial,
+      status: statuspassword
+          ? FormzSubmissionStatus.success
+          : FormzSubmissionStatus.failure,
     );
   }
 
