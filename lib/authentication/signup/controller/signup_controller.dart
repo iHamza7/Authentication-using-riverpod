@@ -45,6 +45,7 @@ class SignUpController extends StateController<SignUpState> {
   }
 
   void signUpWithEmailAndPassword() async {
-    if (!state.status.isSuccess) return;
+    if (state.status.isInitial) return;
+    print('object');
   }
 }
