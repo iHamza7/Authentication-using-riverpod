@@ -20,7 +20,6 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _animationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 400));
@@ -52,7 +51,6 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _animationController.dispose();
   }
