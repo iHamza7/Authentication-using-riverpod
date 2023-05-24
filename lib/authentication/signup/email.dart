@@ -11,7 +11,7 @@ class EmailField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signUpState = ref.watch(signUpProvider);
-    final showError = signUpState.name.isNotValid;
+    final showError = signUpState.email.isNotValid;
     final signUpController = ref.read(signUpProvider.notifier);
     return TextInputField(
       hintText: 'Email',
