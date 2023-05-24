@@ -24,7 +24,7 @@ class SignUpController extends StateController<SignUpState> {
 
   void onEmailChange(String value) {
     final email = Email.dirty(value);
-    final statusemail = Formz.validate([email, state.name, state.password]);
+    final statusemail = Formz.validate([state.name, email, state.password]);
     state = state.copyWith(
       email: email,
       status: statusemail

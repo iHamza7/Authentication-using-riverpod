@@ -17,9 +17,7 @@ class EmailField extends ConsumerWidget {
       hintText: 'Email',
       errorText:
           showError ? Email.showEmailError(signUpState.email.error) : null,
-      onChanged: (email) {
-        signUpController.onEmailChange(email);
-      },
+      onChanged: (email) => signUpController.onEmailChange(email),
     );
   }
 }

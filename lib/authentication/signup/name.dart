@@ -16,9 +16,7 @@ class NameField extends ConsumerWidget {
     return TextInputField(
       hintText: 'Name',
       errorText: showError ? Name.showNameError(signUpState.name.error) : null,
-      onChanged: (name) {
-        signUpController.onNameChange(name);
-      },
+      onChanged: (name) => signUpController.onNameChange(name),
     );
   }
 }
