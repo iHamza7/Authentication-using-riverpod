@@ -58,4 +58,12 @@ class AuthenticationRepository {
       throw SignInWithEmailAndPasswordFailure(e.code);
     }
   }
+
+  Future<void> forgotPassword({required String email}) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw ForgotPasswordFailure(e.code);
+    }
+  }
 }
