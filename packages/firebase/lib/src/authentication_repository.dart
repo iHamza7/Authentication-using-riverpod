@@ -1,3 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+import 'auth_user.dart';
+
 class SignUpWithEmailAndPasswordFailure implements Exception {
   final String code;
   const SignUpWithEmailAndPasswordFailure(this.code);
@@ -16,3 +21,21 @@ class ForgotPasswordFailure implements Exception {
 class SignInWithGoogleFailure implements Exception {}
 
 class SignOutFailure implements Exception {}
+
+class AuthenticationRepository {
+  final _firebaseAuth = FirebaseAuth.instance;
+  final _googleSignIn = GoogleSignIn.standard();
+
+  Stream<AuthUser> get user {
+    return _firebaseAuth.authStateChanges().map((firebaseUser) {
+      return firebaseUser == null
+          ? AuthUser.empty
+          : AuthUser(
+              id: firebaseUser.uid,
+              name: firebaseUser.displayName,
+              email: firebaseUser.email,
+              emailVerified: firebaseUser.emailVerified,
+            );
+    });
+  }
+}
