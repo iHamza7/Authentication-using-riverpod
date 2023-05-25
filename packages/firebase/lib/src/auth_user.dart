@@ -13,6 +13,13 @@ class AuthUser extends Equatable {
     this.emailVerified = false,
   });
 
+  static const empty = AuthUser(id: '');
+  bool get isEmpty => this == AuthUser.empty;
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [
+        id,
+        name,
+        email,
+        emailVerified,
+      ];
 }
