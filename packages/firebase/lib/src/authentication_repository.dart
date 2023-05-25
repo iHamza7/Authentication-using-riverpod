@@ -38,4 +38,14 @@ class AuthenticationRepository {
             );
     });
   }
+
+  Future<void> signUpWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      await _firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw SignInWithEmailAndPasswordFailure(e.code);
+    }
+  }
 }
