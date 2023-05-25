@@ -66,4 +66,15 @@ class AuthenticationRepository {
       throw ForgotPasswordFailure(e.code);
     }
   }
+
+  Future<void> signOut() async {
+    try {
+      await Future.wait([
+        _firebaseAuth.signOut(),
+        _googleSignIn.signOut(),
+      ]);
+    } catch (_) {
+      throw SignOutFailure();
+    }
+  }
 }
