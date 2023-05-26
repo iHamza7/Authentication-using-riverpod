@@ -1,11 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:equatable/equatable.dart';
 import 'package:form_validators/form_validators.dart';
+import 'package:authentication_repository/authentication_repository.dart';
+import '../../../repository/auth_repo_provider.dart';
 
 part 'signin_state.dart';
 
+final signInProvider = StateNotifierProvider<SigInController, SigInState>(
+    (ref) => SigInController(ref.watch(authRepoProvider)));
+
 class SigInController extends StateNotifier<SigInState> {
-  SigInController() : super(const SigInState());
+  final AuthenticationRepository _authenticationRepository;
+  SigInController(this._authenticationRepository) : super(const SigInState());
 
   void onEmailChanged(String value) {
     final email = Email.dirty(value);
@@ -31,5 +37,14 @@ class SigInController extends StateNotifier<SigInState> {
 
   void signInWithEmailAndPassword() async {
     if (state.status.isFailure) return;
+    state = state.copyWith(status: FormzSubmissionStatus.inProgress);
+    try {
+      _authenticationRepository.signInWithEmailAndPassword(
+          email: state.email.value, password: state.password.value);
+      state = state.copyWith(status: FormzSubmissionStatus.success);
+    } on SignInWithEmailAndPasswordFailure catch (e) {
+      state = state.copyWith(
+          status: FormzSubmissionStatus.failure, errorMessage: e.code);
+    }
   }
 }
