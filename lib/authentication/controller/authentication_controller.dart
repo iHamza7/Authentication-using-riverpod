@@ -3,7 +3,12 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../repository/auth_repo_provider.dart';
+
 part 'authentication_state.dart';
+
+final authProvider = StateNotifierProvider<AuthController, AuthenticationState>(
+    (ref) => AuthController(ref.watch(authRepoProvider)));
 
 class AuthController extends StateNotifier<AuthenticationState> {
   final AuthenticationRepository _authRepository;
