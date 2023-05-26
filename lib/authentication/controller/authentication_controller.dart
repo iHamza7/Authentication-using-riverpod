@@ -13,6 +13,8 @@ class AuthController extends StateNotifier<AuthenticationState> {
   void _onUserChanged(AuthUser user) {
     if (user.isEmpty) {
       state = const AuthenticationState.unauthenticated();
+    } else {
+      state = AuthenticationState.authenticated(user);
     }
   }
 }
