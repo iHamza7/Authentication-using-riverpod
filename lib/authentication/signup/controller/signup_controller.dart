@@ -50,7 +50,11 @@ class SignUpController extends StateController<SignUpState> {
   void signUpWithEmailAndPassword() async {
     if (state.status.isInitial) return;
     state = state.copyWith(status: FormzSubmissionStatus.inProgress);
-    try {} on SignUpWithEmailAndPasswordFailure catch (e) {
+    try {
+      _authenticationRepository.signUpWithEmailAndPassword(
+          email: state.email.value, password: state.password.value);
+      state = state.copyWith(status: FormzSubmissionStatus.success);
+    } on SignUpWithEmailAndPasswordFailure catch (e) {
       state = state.copyWith(
           status: FormzSubmissionStatus.failure, errormessage: e.code);
     }
