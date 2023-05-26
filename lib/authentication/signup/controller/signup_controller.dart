@@ -1,14 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_validators/form_validators.dart';
 import 'package:equatable/equatable.dart';
+import 'package:authentication_repository/authentication_repository.dart';
+import '../../../repository/auth_repo_provider.dart';
 part 'signup_state.dart';
 
 final signUpProvider =
     StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
-        (ref) => SignUpController());
+        (ref) => SignUpController(ref.watch(authRepoProvider)));
 
 class SignUpController extends StateController<SignUpState> {
-  SignUpController() : super(const SignUpState());
+  final AuthenticationRepository _authenticationRepository;
+  SignUpController(this._authenticationRepository) : super(const SignUpState());
 
   void onNameChange(String value) {
     final name = Name.dirty(value);
@@ -46,6 +49,10 @@ class SignUpController extends StateController<SignUpState> {
 
   void signUpWithEmailAndPassword() async {
     if (state.status.isInitial) return;
-    print('signUp ❤ ');
+    state = state.copyWith(status: FormzSubmissionStatus.inProgress);
+    try {} on SignUpWithEmailAndPasswordFailure catch (e) {
+      state = state.copyWith(
+          status: FormzSubmissionStatus.failure, errormessage: e.code);
+    }
   }
 }

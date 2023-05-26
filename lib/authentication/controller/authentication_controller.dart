@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../repository/auth_repo_provider.dart';
-
+import 'dart:async';
 part 'authentication_state.dart';
 
 final authProvider = StateNotifierProvider<AuthController, AuthenticationState>(
@@ -12,10 +12,12 @@ final authProvider = StateNotifierProvider<AuthController, AuthenticationState>(
 
 class AuthController extends StateNotifier<AuthenticationState> {
   final AuthenticationRepository _authRepository;
+  late final StreamSubscription _streamSubscription;
 
   AuthController(this._authRepository)
       : super(const AuthenticationState.unauthenticated()) {
-    _authRepository.user.listen((user) => _onUserChanged(user));
+    _streamSubscription =
+        _authRepository.user.listen((user) => _onUserChanged(user));
   }
   void _onUserChanged(AuthUser user) {
     if (user.isEmpty) {
@@ -27,5 +29,11 @@ class AuthController extends StateNotifier<AuthenticationState> {
 
   void onSignOut() {
     _authRepository.signOut();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _streamSubscription.cancel();
   }
 }
