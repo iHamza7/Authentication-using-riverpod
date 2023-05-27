@@ -1,10 +1,11 @@
+import 'dart:async';
 import 'package:authentication_repository/authentication_repository.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../repository/auth_repo_provider.dart';
-import 'dart:async';
+
 part 'authentication_state.dart';
 
 final authProvider = StateNotifierProvider<AuthController, AuthenticationState>(
@@ -33,7 +34,7 @@ class AuthController extends StateNotifier<AuthenticationState> {
 
   @override
   void dispose() {
-    super.dispose();
     _streamSubscription.cancel();
+    super.dispose();
   }
 }

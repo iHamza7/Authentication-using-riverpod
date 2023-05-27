@@ -9,7 +9,7 @@ final signUpProvider =
     StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
         (ref) => SignUpController(ref.watch(authRepoProvider)));
 
-class SignUpController extends StateController<SignUpState> {
+class SignUpController extends StateNotifier<SignUpState> {
   final AuthenticationRepository _authenticationRepository;
   SignUpController(this._authenticationRepository) : super(const SignUpState());
 

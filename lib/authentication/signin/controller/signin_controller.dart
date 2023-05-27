@@ -6,8 +6,9 @@ import '../../../repository/auth_repo_provider.dart';
 
 part 'signin_state.dart';
 
-final signInProvider = StateNotifierProvider<SigInController, SigInState>(
-    (ref) => SigInController(ref.watch(authRepoProvider)));
+final signInProvider =
+    StateNotifierProvider.autoDispose<SigInController, SigInState>(
+        (ref) => SigInController(ref.watch(authRepoProvider)));
 
 class SigInController extends StateNotifier<SigInState> {
   final AuthenticationRepository _authenticationRepository;

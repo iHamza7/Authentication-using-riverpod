@@ -5,7 +5,7 @@ import 'button.dart';
 import 'divider.dart';
 import 'email.dart';
 import 'forgot_password_button.dart';
-import 'name.dart';
+import 'password.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -14,11 +14,11 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Name(),
+        EmailField(),
         SizedBox(
           height: 16,
         ),
-        Email(),
+        PasswordField(),
         ForgotButton(),
         SizedBox(
           height: 16,
