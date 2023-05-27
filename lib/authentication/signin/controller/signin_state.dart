@@ -1,25 +1,25 @@
 part of 'signin_controller.dart';
 
-class SigInState extends Equatable {
+class SignInState extends Equatable {
   final Email email;
   final Password password;
   final FormzSubmissionStatus status;
   final String? errorMessage;
 
-  const SigInState(
+  const SignInState(
       {this.email = const Email.pure(),
       this.password = const Password.pure(),
       this.status = FormzSubmissionStatus.initial,
       this.errorMessage});
 
-  SigInState copyWith({
+  SignInState copyWith({
     Email? email,
     Password? password,
     FormzSubmissionStatus? status,
     bool? buttonTapped,
     String? errorMessage,
   }) {
-    return SigInState(
+    return SignInState(
       email: email ?? this.email,
       password: password ?? this.password,
       status: status ?? this.status,

@@ -7,12 +7,12 @@ import '../../../repository/auth_repo_provider.dart';
 part 'signin_state.dart';
 
 final signInProvider =
-    StateNotifierProvider.autoDispose<SigInController, SigInState>(
-        (ref) => SigInController(ref.watch(authRepoProvider)));
+    StateNotifierProvider.autoDispose<SignInController, SignInState>(
+        (ref) => SignInController(ref.watch(authRepoProvider)));
 
-class SigInController extends StateNotifier<SigInState> {
+class SignInController extends StateNotifier<SignInState> {
   final AuthenticationRepository _authenticationRepository;
-  SigInController(this._authenticationRepository) : super(const SigInState());
+  SignInController(this._authenticationRepository) : super(const SignInState());
 
   void onEmailChanged(String value) {
     final email = Email.dirty(value);
