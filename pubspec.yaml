@@ -41,6 +41,8 @@ dependencies:
     path: packages/form_validators
   authentication_repository:
     path: packages/firebase
+  stack_trace: ^1.11.0
+  firebase_core: ^2.13.0
 
 dev_dependencies:
   flutter_test:
