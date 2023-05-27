@@ -41,11 +41,17 @@ class SigInController extends StateNotifier<SigInState> {
     state = state.copyWith(status: FormzSubmissionStatus.inProgress);
     try {
       _authenticationRepository.signInWithEmailAndPassword(
-          email: state.email.value, password: state.password.value);
-      state = state.copyWith(status: FormzSubmissionStatus.success);
+        email: state.email.value,
+        password: state.password.value,
+      );
+      state = state.copyWith(
+        status: FormzSubmissionStatus.success,
+      );
     } on SignInWithEmailAndPasswordFailure catch (e) {
       state = state.copyWith(
-          status: FormzSubmissionStatus.failure, errorMessage: e.code);
+        status: FormzSubmissionStatus.failure,
+        errorMessage: e.code,
+      );
     }
   }
 }
