@@ -14,10 +14,10 @@ class SignInButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final signInState = ref.watch(signInProvider);
     final bool isValidated = signInState.email.isNotValid;
-    final sigInController = ref.read(signInProvider.notifier);
+    final signInController = ref.read(signInProvider.notifier);
     return AnimatedButton(
       onTap: isValidated
-          ? () => sigInController.signInWithEmailAndPassword()
+          ? () => signInController.signInWithEmailAndPassword()
           : null,
       // ErrorDialog.show(context, 'failed loading');
       // LoadingSheet.show(context);
