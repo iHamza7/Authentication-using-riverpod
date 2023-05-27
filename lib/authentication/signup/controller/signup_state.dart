@@ -5,7 +5,6 @@ class SignUpState extends Equatable {
   final Email email;
   final Password password;
   final FormzSubmissionStatus status;
-
   final String? errormessage;
 
   const SignUpState({

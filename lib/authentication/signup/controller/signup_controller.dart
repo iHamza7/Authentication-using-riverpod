@@ -7,7 +7,8 @@ part 'signup_state.dart';
 
 final signUpProvider =
     StateNotifierProvider.autoDispose<SignUpController, SignUpState>(
-        (ref) => SignUpController(ref.watch(authRepoProvider)));
+  (ref) => SignUpController(ref.watch(authRepoProvider)),
+);
 
 class SignUpController extends StateNotifier<SignUpState> {
   final AuthenticationRepository _authenticationRepository;
