@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter authentication using ',
+      title: 'Flutter authentication ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
