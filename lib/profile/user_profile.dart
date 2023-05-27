@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Profile extends StatelessWidget {
+import '../authentication/controller/authentication_controller.dart';
+
+class Profile extends ConsumerWidget {
   const Profile({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authController = ref.read(authProvider.notifier);
     return Scaffold(
       body: Center(
         child: Column(
@@ -12,7 +16,11 @@ class Profile extends StatelessWidget {
             const Text('UserID'),
             const Text('User Email'),
             const Text('Email verified'),
-            TextButton(onPressed: () {}, child: const Text('SignOut'))
+            TextButton(
+                onPressed: () {
+                  authController.onSignOut();
+                },
+                child: const Text('SignOut'))
           ],
         ),
       ),
