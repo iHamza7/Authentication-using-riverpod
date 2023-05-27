@@ -38,7 +38,9 @@ class SigInController extends StateNotifier<SigInState> {
 
   void signInWithEmailAndPassword() async {
     if (state.status.isFailure) return;
-    state = state.copyWith(status: FormzSubmissionStatus.inProgress);
+    state = state.copyWith(
+      status: FormzSubmissionStatus.inProgress,
+    );
     try {
       _authenticationRepository.signInWithEmailAndPassword(
         email: state.email.value,
