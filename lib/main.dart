@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter authentication using riverpod',
+      title: 'Flutter authentication using riverpo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
