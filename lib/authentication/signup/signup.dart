@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_validators/form_validators.dart';
+import 'controller/signup_controller.dart';
+import '../../components/loading_error.dart';
 import 'button.dart';
 import 'email.dart';
 import 'name.dart';
 import 'password.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends ConsumerWidget {
   const SignUp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<SignUpState>(signUpProvider, (previous, current) {
+      if (current.status.isInProgress) {
+        LoadingSheet.show(context);
+      }
+    });
     return const Column(
       children: [
         NameField(),
