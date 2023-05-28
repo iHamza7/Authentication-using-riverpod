@@ -40,7 +40,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter authentication using rive',
+      title: 'Flutter authentication using rivep',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
