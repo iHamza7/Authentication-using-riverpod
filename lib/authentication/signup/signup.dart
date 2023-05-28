@@ -16,6 +16,9 @@ class SignUp extends ConsumerWidget {
     ref.listen<SignUpState>(signUpProvider, (previous, current) {
       if (current.status.isInProgress) {
         LoadingSheet.show(context);
+      } else if (current.status.isFailure) {
+        Navigator.of(context).pop();
+        ErrorDialog.show(context, "${current.errormessage}");
       }
     });
     return const Column(
