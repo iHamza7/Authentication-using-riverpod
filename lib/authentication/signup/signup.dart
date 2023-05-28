@@ -19,6 +19,8 @@ class SignUp extends ConsumerWidget {
       } else if (current.status.isFailure) {
         Navigator.of(context).pop();
         ErrorDialog.show(context, "${current.errormessage}");
+      } else if (current.status.isSuccess) {
+        Navigator.of(context).pop();
       }
     });
     return const Column(
