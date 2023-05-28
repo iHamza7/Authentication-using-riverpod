@@ -9,13 +9,16 @@ class Profile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authController = ref.read(authProvider.notifier);
+    final authUser = ref.watch(authProvider).user;
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('UserID'),
-            const Text('User Email'),
-            const Text('Email verified'),
+            Text('UserID : ${authUser.id}'),
+            Text('User Email: ${authUser.email}'),
+            Text('Email verified: ${authUser.emailVerified}'),
             TextButton(
                 onPressed: () {
                   authController.onSignOut();
