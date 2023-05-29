@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../components/animated_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'controller/google_signin_controller.dart';
 
 class GoogleSignInButton extends ConsumerWidget {
   const GoogleSignInButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch<GoogleSignInState>(googleSignInProvider);
     return AnimatedButton(
-      onTap: () {},
+      onTap: () {
+        ref.read(googleSignInProvider.notifier).signInWithGoogle();
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 18),
         alignment: Alignment.center,
