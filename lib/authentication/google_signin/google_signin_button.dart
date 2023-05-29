@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../components/animated_button.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class GoogleSignInButton extends StatelessWidget {
+class GoogleSignInButton extends ConsumerWidget {
   const GoogleSignInButton({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return AnimatedButton(
       onTap: () {},
       child: Container(
