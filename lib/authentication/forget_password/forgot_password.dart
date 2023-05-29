@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_validators/form_validators.dart';
+import 'controller/forgot_password_controller.dart';
 
 import '../../components/text_input_field.dart';
 
-class ForgotPasswordView extends StatelessWidget {
+class ForgotPasswordView extends ConsumerWidget {
   const ForgotPasswordView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final forgotPasswordState = ref.watch(forgotPasswordProvider);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -16,7 +20,13 @@ class ForgotPasswordView extends StatelessWidget {
             children: [
               TextInputField(
                 hintText: 'Please Enter your Email',
-                onChanged: (_) {},
+                errorText:
+                    Email.showEmailError(forgotPasswordState.email.error),
+                onChanged: (email) {
+                  ref
+                      .read(forgotPasswordProvider.notifier)
+                      .onEmailChange(email);
+                },
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

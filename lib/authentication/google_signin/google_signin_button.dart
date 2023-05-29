@@ -9,7 +9,7 @@ class GoogleSignInButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch<GoogleSignInState>(googleSignInProvider);
+    // ref.listen<GoogleSignInState>(googleSignInProvider, (previous, next) {});
     return AnimatedButton(
       onTap: () {
         ref.read(googleSignInProvider.notifier).signInWithGoogle();
